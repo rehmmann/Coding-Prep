@@ -1,0 +1,27 @@
+def isValid(s):
+    # Write your code here
+    freq = dict()
+    dic = dict()
+    for i in s:
+        if i in freq:
+            freq[i] += 1
+        else:
+            freq[i] = 1
+
+    for keys in freq.keys():
+        if freq[keys] in dic:
+            dic[freq[keys]] += 1
+        else:
+            dic[freq[keys]] = 1
+    print(freq)
+    print(dic)
+    if len(dic) != 2:
+        return "NO"
+
+    for i in range(len(dic.items())):
+        print(i)
+
+
+    return  "YES"
+
+print(isValid("abcdefghhgfedecba"))
